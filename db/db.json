@@ -1,0 +1,91 @@
+{
+    "ingredientes": {
+        "massa": [
+            {
+                "id": 1,
+                "tipo": "Fina"
+            },
+            {
+                "id": 2,
+                "tipo": "Tradicional"
+            },
+            {
+                "id": 3,
+                "tipo": "Doce"
+            }            
+        ],
+        "Recheio": [
+            {
+                "id": 1,
+                "tipo": "Mussarela"
+            },
+            {
+                "id": 2,
+                "tipo": "4 Queijos"
+            },
+            {
+                "id": 3,
+                "tipo": "Chocolate"
+            },
+            {
+                "id": 4,
+                "tipo": "Chocolate Branco"
+            }
+        ],
+        "opcionais": [
+            {
+                "id": 1,
+                "tipo": "Bacon"
+            },
+            {
+                "id": 2,
+                "tipo": "Cheddar"
+            },
+            {
+                "id": 3,
+                "tipo": "Salame"
+            },
+            {
+                "id": 4,
+                "tipo": "Tomate"
+            },
+            {
+                "id": 5,
+                "tipo": "Cebola roxa"
+            },
+            {
+                "id": 6,
+                "tipo": "Pepino"
+            },
+            {
+                "id": 7,
+                "tipo": "Granulado"
+            },
+            {
+                "id": 8,
+                "tipo": "Confeito"
+            },
+            {
+                "id": 9,
+                "tipo": "Côco Ralado"
+            }
+        ]
+    },
+    "status": [
+        {
+            "id": 1,
+            "tipo": "Solicitado"
+        },
+        {
+            "id": 2,
+            "tipo": "Em produção"
+        },
+        {
+            "id": 3,
+            "tipo": "Finalizado"
+        }
+    ],
+    "burgers": [
+        
+    ]
+}
