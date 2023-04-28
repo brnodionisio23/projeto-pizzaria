@@ -1,79 +1,146 @@
 {
-    "ingredientes": {
-        "massas": [
-            {
-                "id": 1,
-                "tipo": "Fina"
-            },
-            {
-                "id": 2,
-                "tipo": "Tradicional"
-            },
-            {
-                "id": 3,
-                "tipo": "Doce"
-            }            
-        ],
-        "recheios": [
-            {
-                "id": 1,
-                "tipo": "Mussarela"
-            },
-            {
-                "id": 2,
-                "tipo": "4 Queijos"
-            },
-            {
-                "id": 3,
-                "tipo": "Chocolate"
-            },
-            {
-                "id": 4,
-                "tipo": "Chocolate Branco"
-            }
-        ],
-        "opcionais": [
-            {
-                "id": 1,
-                "tipo": "Bacon"
-            },
-            {
-                "id": 2,
-                "tipo": "Granulado"
-            },
-            {
-                "id": 3,
-                "tipo": "Cebola Roxa"
-            },
-            {
-                "id": 4,
-                "tipo": "Côco Ralado"
-            },
-            {
-                "id": 5,
-                "tipo": "Tomate"
-            },
-            {
-                "id": 6,
-                "tipo": "Confeito"
-            }
-        ]
-    },
-    "status": [
-        {
-            "id": 1,
-            "tipo": "Solicitado"
-        },
-        {
-            "id": 2,
-            "tipo": "Em produção"
-        },
-        {
-            "id": 3,
-            "tipo": "Finalizado"
-        }
+  "ingredientes": {
+    "massas": [
+      {
+        "id": 1,
+        "tipo": "Fina"
+      },
+      {
+        "id": 2,
+        "tipo": "Tradicional"
+      },
+      {
+        "id": 3,
+        "tipo": "Doce"
+      }
     ],
-    "pizzas": [
-        
+    "recheios": [
+      {
+        "id": 1,
+        "tipo": "Mussarela"
+      },
+      {
+        "id": 2,
+        "tipo": "4 Queijos"
+      },
+      {
+        "id": 3,
+        "tipo": "Chocolate"
+      },
+      {
+        "id": 4,
+        "tipo": "Chocolate Branco"
+      }
+    ],
+    "opcionais": [
+      {
+        "id": 1,
+        "tipo": "Bacon"
+      },
+      {
+        "id": 2,
+        "tipo": "Granulado"
+      },
+      {
+        "id": 3,
+        "tipo": "Cebola Roxa"
+      },
+      {
+        "id": 4,
+        "tipo": "Côco Ralado"
+      },
+      {
+        "id": 5,
+        "tipo": "Tomate"
+      },
+      {
+        "id": 6,
+        "tipo": "Confeito"
+      }
     ]
+  },
+  "status": [
+    {
+      "id": 1,
+      "tipo": "Solicitado"
+    },
+    {
+      "id": 2,
+      "tipo": "Em produção"
+    },
+    {
+      "id": 3,
+      "tipo": "Finalizado"
+    }
+  ],
+  "pizzas": [
+    {
+      "nome": "treta",
+      "massa": "Fina",
+      "recheio": "Chocolate",
+      "opcionais": [
+        "Tomate",
+        "Cebola Roxa"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "treta",
+      "massa": "Fina",
+      "recheio": "Chocolate",
+      "opcionais": [
+        "Tomate",
+        "Cebola Roxa"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "carlin",
+      "massa": "Doce",
+      "recheio": "4 Queijos",
+      "opcionais": [
+        "Confeito",
+        "Côco Ralado",
+        "Granulado"
+      ],
+      "status": "Solicitado",
+      "id": 3
+    },
+    {
+      "nome": "Quite",
+      "massa": "Fina",
+      "recheio": "Mussarela",
+      "opcionais": [
+        "Bacon",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "id": 4
+    },
+    {
+      "nome": "fulano",
+      "massa": "Tradicional",
+      "recheio": "Chocolate",
+      "opcionais": [
+        "Granulado",
+        "Cebola Roxa"
+      ],
+      "status": "Solicitado",
+      "id": 5
+    },
+    {
+      "nome": "teteu",
+      "massa": "Fina",
+      "recheio": "Chocolate Branco",
+      "opcionais": [
+        "Tomate",
+        "Bacon",
+        "Côco Ralado"
+      ],
+      "status": "Solicitado",
+      "id": 6
+    }
+  ]
 }

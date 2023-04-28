@@ -1,35 +1,36 @@
 <template>
     <div>
-        <p>Componente de Mensagem</p>
+        <Message :msg="msg" v-show="msg"/>
     </div>
     <div>
-        <form id="pizza-form">
+        <form id="pizza-form" @submit="createPizza">
             <div class="input-container">
-                <label for="name">Nome do cliente:</label>
-                <input type="text" name="name" id="name" v-model="name" placeholder="Digite o seu nome">
+                <label for="nome">Nome do cliente:</label>
+                <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu nome">
             </div>
 
             <div class="input-container">
-                <label for="mass">Escolha a massa:</label>
-                <select name="mass" id="mass" v-model="mass">
+                <label for="massa">Escolha a massa:</label>
+                <select name="massa" id="massa" v-model="massa">
                     <option value="">Selecione a massa</option>
-                    <option v-for="mass in massas" :key="mass.id" value="mass.tipo">{{mass.tipo}}</option>
+                    <option v-for="massa in massas" :key="massa.id" :value="massa.tipo">{{ massa.tipo }}</option>
+                    
                 </select>
             </div>
 
             <div class="input-container">
-                <label for="filling">Selecione o seu recheio:</label>
-                <select name="filling" id="filling" v-model="filling">
+                <label for="recheio">Selecione o seu recheio:</label>
+                <select name="recheio" id="recheio" v-model="recheio">
                     <option value="">Selecione o tipo de recheio</option>
-                    <option v-for="filling in recheios" :key="filling.id" value="filling.tipo">{{filling.tipo}}</option>
+                    <option v-for="recheio in recheios" :key="recheio.id" :value="recheio.tipo">{{ recheio.tipo }}</option>
                 </select>
             </div>
 
             <div id="optional-container" class="input-container">
-                <label id="optional-title"  for="optional">Selecione os opcionais:</label>
-                <div class="checkbox-container" v-for="optional in opcionaisdata" :key="optional.id">
-                    <input type="checkbox" name="optional" v-model="opcionais" :value="optional.tipo">
-                    <span>{{optional.tipo}}</span>
+                <label id="opcional"  for="optional">Selecione os opcionais:</label>
+                <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
+                    <input type="checkbox" name="opcional" v-model="opcionais" :value="opcional.tipo">
+                    <span>{{opcional.tipo}}</span>
                 </div>
                 
             </div>
@@ -42,7 +43,8 @@
     </div>
 </template>
 <script>
-export default {
+import Message from "./Message.vue"
+export default{
     name: "PizzaForm",
     data() {
         return {
@@ -54,8 +56,7 @@ export default {
             recheio: null,
             opcionais: [],
             status: "Solicitado",
-            msg: "null"
-
+            msg: null
         }
     },
     methods: {
@@ -66,11 +67,42 @@ export default {
             this.massas = data.massas;
             this.recheios = data.recheios;
             this.opcionaisdata = data.opcionais;
+        },
+        async createPizza(e){
+            e.preventDefault();
+            const data = {
+                nome: this.nome,
+                massa: this.massa,
+                recheio: this.recheio,
+                opcionais: Array.from(this.opcionais),
+                status: "Solicitado"
+            }
+            const dataJson = JSON.stringify(data);
+
+            const req = await fetch("http://localhost:3000/pizzas",{
+                method: "POST",
+                headers: {"Content-type": "application/json" },
+                body: dataJson
+            })
+
+            const res = await req.json();
+
+            this.msg = `Pedido N° ${res.id} realizado com sucesso`;
+
+            setTimeout(()=> this.msg = "", 3000)
+            
+            this.nome=""
+            this.massa=""
+            this.recheio=""
+            this.opcionais=[]
         }
     },
     mounted() {
         this.getIngredients()
     },
+    components:{
+        Message
+    }
 }
 </script>
 <style scoped>
