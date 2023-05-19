@@ -141,6 +141,16 @@
       ],
       "status": "Solicitado",
       "id": 6
+    },
+    {
+      "nome": "futano",
+      "massa": "Fina",
+      "recheio": "Mussarela",
+      "opcionais": [
+        "Bacon"
+      ],
+      "status": "Solicitado",
+      "id": 7
     }
   ]
 }
