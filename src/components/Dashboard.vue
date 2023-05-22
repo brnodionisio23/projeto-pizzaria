@@ -11,20 +11,21 @@
             </div>
         </div>
         <div id="pizza-table-rows">
-            <div class="pizza-table-row">
-                <div class="order-number">1</div>
-                <div>Fulano</div>
-                <div>Massa Fina</div>
-                <div>Mussarela</div>
+            <div class="pizza-table-row" v-for="pizza in pizzas" :hey="pizza.id">
+                <div class="order-number">{{ pizza.id }}</div>
+                <div>{{ pizza.nome }}</div>
+                <div>{{ pizza.massa }}</div>
+                <div>{{ pizza.recheio }}</div>
                 <div>
                     <ul>
-                        <li>Salame</li>
-                        <li>Tomate</li>
+                        <li v-for="(opcional, index) in pizza.opcionais" :key="index">{{ opcional }}</li>
+
                     </ul>
                 </div>
                 <div>
                     <select name="status" id="status">
                         <option value="">Selecione</option>
+                        <option v-for="s in status" :key="s.id" value="s.tipo" :selected="pizza.status == s.tipo"> {{ s.tipo }}</option>
                     </select>
                     <button class="delete-btn">Cancelar</button>
                 </div>
@@ -36,7 +37,39 @@
 
 <script>
 export default {
-    name: "Dashboard"
+    name: "Dashboard",
+    data() {
+        return {
+            pizzas: null,
+            pizza_id: null,
+            status: []
+        }
+    },
+    methods: {
+        async getPedidos() {
+
+            const req = await fetch("http://localhost:3000/pizzas")
+
+            const data = await req.json()
+
+            this.pizzas = data
+
+            this.getStatus()
+        },
+
+        async getStatus() {
+
+            const req = await fetch("http://localhost:3000/status")
+
+            const data = await req.json()
+
+            this.status = data
+
+        }
+    },
+    mounted() {
+        this.getPedidos()
+    },
 }
 </script>
 
