@@ -75,47 +75,26 @@
   ],
   "pizzas": [
     {
-      "nome": "treta",
+      "nome": "fulano",
       "massa": "Fina",
-      "recheio": "Chocolate",
-      "opcionais": [
-        "Tomate",
-        "Cebola Roxa"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
-      "nome": "treta",
-      "massa": "Fina",
-      "recheio": "Chocolate",
-      "opcionais": [
-        "Tomate",
-        "Cebola Roxa"
-      ],
-      "status": "Solicitado",
-      "id": 2
-    },
-    {
-      "nome": "Quite",
-      "massa": "Fina",
-      "recheio": "Mussarela",
+      "recheio": "4 Queijos",
       "opcionais": [
         "Bacon",
         "Tomate"
       ],
-      "status": "Solicitado",
-      "id": 4
+      "status": "Em produção",
+      "id": 1
     },
     {
-      "nome": "futano",
-      "massa": "Fina",
-      "recheio": "Mussarela",
+      "nome": "Beltrano",
+      "massa": "Doce",
+      "recheio": "Chocolate",
       "opcionais": [
-        "Bacon"
+        "Granulado",
+        "Confeito"
       ],
       "status": "Solicitado",
-      "id": 7
+      "id": 2
     }
   ]
 }
